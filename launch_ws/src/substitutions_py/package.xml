@@ -3,9 +3,9 @@
 <package format="3">
   <name>substitutions_py</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="bestbada1001@gmail.com">l</maintainer>
-  <license>TODO: License declaration</license>
+  <description>Launch substitutions and event handlers practice based on the ROS 2 documentation</description>
+  <maintainer email="279787542+bestbada@users.noreply.github.com">Juhyun Lee</maintainer>
+  <license>CC-BY-4.0</license>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

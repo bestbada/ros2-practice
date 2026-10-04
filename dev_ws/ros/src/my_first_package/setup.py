@@ -13,10 +13,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='l',
-    maintainer_email='l@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='Juhyun Lee',
+    maintainer_email='279787542+bestbada@users.noreply.github.com',
+    description='turtlesim topic, service, action and parameter practice (PinkLab course)',
+    license='All rights reserved (PinkLab course material)',
     extras_require={
         'test': [
             'pytest',

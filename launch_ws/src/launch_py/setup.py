@@ -15,10 +15,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='l',
-    maintainer_email='bestbada1001@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='Juhyun Lee',
+    maintainer_email='279787542+bestbada@users.noreply.github.com',
+    description='Python launch file practice based on the ROS 2 documentation',
+    license='CC-BY-4.0',
     extras_require={
         'test': [
             'pytest',

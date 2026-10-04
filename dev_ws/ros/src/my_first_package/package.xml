@@ -3,9 +3,9 @@
 <package format="3">
   <name>my_first_package</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="l@todo.todo">l</maintainer>
-  <license>TODO: License declaration</license>
+  <description>turtlesim topic, service, action and parameter practice (PinkLab course)</description>
+  <maintainer email="279787542+bestbada@users.noreply.github.com">Juhyun Lee</maintainer>
+  <license>All rights reserved (PinkLab course material)</license>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

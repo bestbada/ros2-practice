@@ -3,9 +3,9 @@
 <package format="3">
   <name>my_urdf</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="bestbada1001@gmail.com">l</maintainer>
-  <license>TODO: License declaration</license>
+  <description>Basic URDF model and RViz display practice based on ros/urdf_tutorial</description>
+  <maintainer email="279787542+bestbada@users.noreply.github.com">Juhyun Lee</maintainer>
+  <license>BSD-3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

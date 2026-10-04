@@ -12,7 +12,7 @@ from my_first_package.my_subscriber import TurtlesimSubscriber
 from rcl_interfaces.msg import SetParametersResult
 
 import math
-import time
+
 class TurtleSub_Action(TurtlesimSubscriber):
     def __init__(self, ac_server):
         super().__init__()
@@ -42,7 +42,7 @@ class DistTurtleServer(Node):
         for param in params:
             print(param.name, "is change to", param.value)
 
-            if param.name == "quantile)time":
+            if param.name == "quantile_time":
                 self.quantile_time = param.value
             if param.name == "almost_goal_time":
                 self.almosts_time = param.value
@@ -52,14 +52,18 @@ class DistTurtleServer(Node):
         return SetParametersResult(successful=True)
     
     def calc_diff_pose(self):
+        # 첫 호출에서만 이전 위치를 현재 위치로 맞춰 둠 (첫 이동 거리는 0)
         if self.is_first_time:
             self.previous_pose.x = self.current_pose.x
             self.previous_pose.y = self.current_pose.y
             self.is_first_time = False
-            diff_dist = math.sqrt((self.current_pose.x - self.previous_pose.x)**2 +\
-            (self.current_pose.y - self.previous_pose.y)**2)
-            self.previous_pose = self.current_pose
+
+        # 매 호출마다 이전 위치와 현재 위치 사이의 거리를 계산
+        diff_dist = math.sqrt((self.current_pose.x - self.previous_pose.x)**2 +\
+        (self.current_pose.y - self.previous_pose.y)**2)
+        self.previous_pose = self.current_pose
         return diff_dist
+
     def excute_callback(self, goal_handle):
         feedback_msg = DistTurtle.Feedback()
         msg = Twist()
@@ -75,8 +79,8 @@ class DistTurtleServer(Node):
                 break
         goal_handle.succeed()
         result = DistTurtle.Result()
-        result.pos_x = self.current_pose.x
-        result.pos_y = self.current_pose.y
+        result.pose_x = self.current_pose.x
+        result.pose_y = self.current_pose.y
         result.pos_theta = self.current_pose.theta
         result.result_dist = self.total_dist
         self.total_dist = 0
